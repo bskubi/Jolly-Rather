@@ -28,7 +28,7 @@ def CompareTasksCallback(opt1, opt2, prioritizer):
 prioritizer = Prioritizer()
 prioritizer.tasks = [Task("Fly the parrot"),
                     Task("Swab the deck"),
-                    Task("Bury pirate treasure"),
+                    Task("Dig up treasure chest"),
                     Task("Shine peg leg")]
 prioritizer.callbacks["do_task"] = DoTaskCallback
 prioritizer.callbacks["compare_tasks"] = CompareTasksCallback
