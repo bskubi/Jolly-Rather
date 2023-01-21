@@ -1,0 +1,9 @@
+The prioritizer class implements Final Version Perfected, a task prioritization algorithm
+It works as follows:
+* Make an unordered list of your todo tasks. Mark the first as "option 1" and the second as "option 2"
+* At each step, choose whether you'd rather do option 1 or option 2.
+* If you'd rather do option 1, make the next task down the list into option 2
+* If you'd rather do option 2, mark it and make the next task down the list into option 2
+* If you reach the end of the list:
+* * First, do the most recent task you marked
+* * Then, set the second-most-recent marked task as option 1 and start comparing options again
