@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>JollyRatherMainWindow</class>
+ <widget class="QMainWindow" name="JollyRatherMainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>531</width>
+    <height>262</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Jolly Rather (saves your list when you quit)</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout_3">
+    <item>
+     <widget class="QSplitter" name="splitter_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QLabel" name="todo_label">
+       <property name="font">
+        <font>
+         <family>Gill Sans MT</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Todo List</string>
+       </property>
+      </widget>
+      <widget class="QPlainTextEdit" name="todo_list">
+       <property name="font">
+        <font>
+         <family>Gill Sans MT</family>
+         <pointsize>12</pointsize>
+        </font>
+       </property>
+       <property name="plainText">
+        <string>Fly the parrot
+Swab the deck
+Bury treasure
+Shine peg leg</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QSplitter" name="option_splitter">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <widget class="QLabel" name="headline_label">
+       <property name="font">
+        <font>
+         <family>Gill Sans MT</family>
+         <pointsize>16</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Would you rather...</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="opt1">
+       <property name="font">
+        <font>
+         <family>Gill Sans MT</family>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Option 1</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="opt2">
+       <property name="font">
+        <font>
+         <family>Gill Sans MT</family>
+         <pointsize>14</pointsize>
+        </font>
+       </property>
+       <property name="text">
+        <string>Option 2</string>
+       </property>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>531</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
