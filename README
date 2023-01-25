@@ -1,35 +1,6 @@
-The Prioritizer class is a Python implementation of Final Version Perfected, a task prioritization algorithm
-The algorithm works as follows:
-* Make an unordered list of your todo tasks. Mark the first as "option 1" and the second as "option 2"
-* At each step, choose whether you'd rather do option 1 or option 2.
-* If you'd rather do option 1, make the next task down the list into option 2
-* If you'd rather do option 2, mark it and make the next task down the list into option 2
-* If you reach the end of the list:
-* * First, do the most recent task you marked
-* * Then, set the second-most-recent marked task as option 1 and start comparing options again
-
-I first encountered it in Will Bradshaw's LessWrong post "Final Version Perfected: An Underused Execution Algorithm"
+Jolly Rather is an implementation of the Final Version Perfected task prioritization algorithm, which I learned about here:
 https://www.lesswrong.com/posts/xfcKYznQ6B9yuxB28/final-version-perfected-an-underused-execution-algorithm
 
-Here is an example of how to use the Prioritizer class:
-
-from prioritizer import all
-
-def DoTaskCallback(action, prioritizer):
-  print("Do", action)
-
-def CompareTasksCallback(opt1, opt2, prioritizer):
-  print("Would you rather:\n1.", opt1, "\n2.", opt2)
-  i = ""
-  while i not in ["1", "2"]:
-    i = input("> ")
-  return i
-  
-prioritizer = Prioritizer()
-prioritizer.tasks = [Task("Fly the parrot"),
-                    Task("Swab the deck"),
-                    Task("Dig up treasure chest"),
-                    Task("Shine peg leg")]
-prioritizer.callbacks["do_task"] = DoTaskCallback
-prioritizer.callbacks["compare_tasks"] = CompareTasksCallback
-prioritizer.Prioritize()
+The basic idea is that you compare two options at a time until you've found the best thing to do next. Then you do it, and then start comparing options for the next task.
+This is a lightweight app. You can update the todo list, which loads and saves automatically when you start or quit the program. You can also control the process with
+a simple button interface.
