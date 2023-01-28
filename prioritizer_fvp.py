@@ -29,7 +29,14 @@ class PrioritizerFVP(Prioritizer):
         if len(self.tasks) >= 2:
             self.tasks[1].update(Task.s2m("?"))
         self.fix_marks()
-        self.callbacks["update"]()
+
+        self.callbacks["update_todo_list"]()
+        if self.finished():
+            self.callbacks["finished"]()
+        elif self.ready_to_exec():
+            self.callbacks["execute"](self.tasks[self.exec()])
+        else:
+            self.callbacks["option"](self.tasks[self.opt(1), self.tasks[self.opt(2)]])
 
     @classmethod
     def trim_beginning_whitespace(cls, s):
@@ -155,7 +162,7 @@ class PrioritizerFVP(Prioritizer):
     def ready_to_exec(self):
         last_star = self.index(Task.s2m("*"), start_index = -1, reverse = True)
         last_opt = self.index(Task.s2m("!*"), start_index = -1, reverse = True)
-        return last_star > last_opt
+        return last_star is not None and last_opt is not None and last_star > last_opt
 
     def exec_last_unfinished_task(self):
         self.tasks[self.index(Task.s2m("!$"), start_index = -1, reverse = True)].update("* # !?")

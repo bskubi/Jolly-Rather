@@ -26,7 +26,7 @@ class PrioritizerUI(QMainWindow, Ui_JollyRatherMainWindow):
         self.prioritizer.callbacks["option"] = self.handle_choose
         self.prioritizer.callbacks["execute"] = self.handle_execute
         self.prioritizer.callbacks["finished"] = self.handle_finished
-        self.prioritizer.callbacks["update"] = self.handle_prioritizer_update
+        self.prioritizer.callbacks["update_todo_list"] = self.handle_update_todo_list
 
         if os.path.exists("jollyrather_save.txt"):
             with open("jollyrather_save.txt") as f:
@@ -57,6 +57,7 @@ class PrioritizerUI(QMainWindow, Ui_JollyRatherMainWindow):
         self.headline_label.setText("Would you rather...")
         self.opt1.setText(opt1.desc)
         self.opt2.setText(opt2.desc)
+        self.opt1.setVisible(True)
         self.opt2.setVisible(True)
         self.opt1.clicked.disconnect()
         self.opt2.clicked.disconnect()
@@ -75,7 +76,7 @@ class PrioritizerUI(QMainWindow, Ui_JollyRatherMainWindow):
         self.opt1.setVisible(False)
         self.opt2.setVisible(False)
 
-    def handle_prioritizer_update(self):
+    def handle_update_todo_list(self):
         self.todo_list.textChanged.disconnect()
         cursor = self.todo_list.textCursor()
         pos = cursor.position()

@@ -25,4 +25,4 @@ class PrioritizerFVPInterface(PrioritizerFVP):
             self.callbacks["execute"](self.tasks[self.exec()])
         elif self.finished_state():
             self.callbacks["finished"]()
-        self.callbacks["update"]()
+        self.callbacks["update_todo_list"]()
