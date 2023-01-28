@@ -4,3 +4,5 @@ https://www.lesswrong.com/posts/xfcKYznQ6B9yuxB28/final-version-perfected-an-und
 The basic idea is that you compare two options at a time until you've found the best thing to do next. Then you do it, and then start comparing options for the next task.
 This is a lightweight app. You can update the todo list, which loads and saves automatically when you start or quit the program. You can also control the process with
 a simple button interface.
+
+NOTE: Because Jolly Rather is a new app, it is not commonly downloaded, and you may get a warning if you are running Windows the first time you run it.
